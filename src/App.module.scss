@@ -1,0 +1,54 @@
+@import "./Styles/Colors.scss";
+@import "./Styles/Variables.scss";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: $desktop;
+  overflow-y: hidden;
+  flex: 1;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  background-color: $dark;
+  color: $white;
+}
+
+.tr {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  background-color: $dark-blue;
+  padding: $space-nano;
+  margin: $space-mega;
+  border-radius: $x2;
+  &:hover {
+    cursor: pointer;
+  }
+  h4,
+  h5 {
+    margin: $space-normal $space-nano;
+  }
+}
+
+.tags {
+  color: $grey;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: $white;
+}
+.price {
+  color: $green;
+}
+
+.tb {
+  display: flex;
+  flex-wrap: wrap;
+}
