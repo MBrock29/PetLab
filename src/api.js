@@ -50,7 +50,7 @@ export const fetchNextPage = async (tags, price, subscription, pageCount) => {
 
     return json.filter((i) => i.price <= (price !== null ? price : 10000));
   } catch (error) {
-    // errorToast();
+    errorToast();
   }
 };
 
@@ -66,6 +66,6 @@ export const fetchPrevPage = async (tags, price, subscription, pageCount) => {
 
     return json.filter((i) => i.price <= (price !== null ? price : 10000));
   } catch (error) {
-    // errorToast();
+    errorToast();
   }
 };

@@ -5,13 +5,8 @@ import { Tags } from "./Tags/Tags";
 import { Price } from "./Price/Price";
 import { Subscription } from "./Subscription/Subscription";
 import { useState, useEffect } from "react";
-import {
-  fetchData,
-  fetchNextPage,
-  fetchPagination,
-  fetchPrevPage,
-} from "./Api";
-import { ToastContainer, toast } from "react-toastify";
+import { fetchData, fetchNextPage, fetchPrevPage } from "./Api";
+import { ToastContainer } from "react-toastify";
 import { Pagination } from "./Pagination/Pagination";
 
 function App() {
@@ -80,8 +75,8 @@ function App() {
         <Price setPrice={setPrice} price={price} />
       </Sidebar>
       <div className={s.container}>
+        <ToastContainer />
         <table>
-          <ToastContainer />
           <tbody className={s.tb}>
             {data.map((info) => (
               <tr className={s.tr} key={info.slug}>
