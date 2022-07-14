@@ -8,6 +8,10 @@
   max-width: $desktop;
   overflow-y: hidden;
   flex: 1;
+  margin-left: 20%;
+  @media (max-width: $desktop) {
+    margin-left: 0;
+  }
 }
 
 .App {
@@ -15,6 +19,9 @@
   display: flex;
   background-color: $dark;
   color: $white;
+  @media (max-width: $desktop) {
+    flex-direction: column;
+  }
 }
 
 .tr {
@@ -51,4 +58,5 @@
 .tb {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }

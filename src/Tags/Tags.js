@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from "react";
-
-import { fetchTags } from "../api";
+import React, { useEffect } from "react";
+import s from "./Tags.module.scss";
+import { fetchTags } from "../Api";
 
 export const Tags = ({ tagList, tags, setTags, setTagList }) => {
-  const handleSelect = (e) => {
-    if (tags === e) {
+  const handleSelect = (i) => {
+    if (tags === i) {
       setTags(null);
+      isTagSelected(null);
     } else {
-      setTags(e);
+      setTags(i);
+      isTagSelected(i);
     }
+  };
+
+  const isTagSelected = (value) => tags === value;
+  const highlight = {
+    backgroundColor: "#43d5b0",
+    boxShadow: "#43d5b0 0px 4px 0px",
   };
 
   useEffect(() => {
@@ -24,11 +32,20 @@ export const Tags = ({ tagList, tags, setTags, setTagList }) => {
   }, []);
 
   return (
-    <div>
+    <div className={s.wrapper}>
       <h3>Filter by Tag</h3>
-      <div>
+      <div className={s.tagContainer}>
         {tagList &&
-          tagList.map((i) => <div onClick={() => handleSelect(i)}>{i}</div>)}
+          tagList.map((i, index) => (
+            <div
+              key={index}
+              className={s.tag}
+              onClick={() => handleSelect(i)}
+              style={isTagSelected(i) ? highlight : null}
+            >
+              {i}
+            </div>
+          ))}
       </div>
     </div>
   );
