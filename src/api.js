@@ -28,16 +28,6 @@ export const fetchTags = async () => {
   }
 };
 
-export const fetchPagination = async () => {
-  fetch("https://jsonplaceholder.typicode.com/posts?_page=1&_limit=2").then(
-    async (response) => {
-      const link = response.headers.get("link");
-      const json = await response.json();
-      console.log(link, json);
-    }
-  );
-};
-
 export const fetchNextPage = async (tags, price, subscription, pageCount) => {
   try {
     const fetchResponse = await fetch(

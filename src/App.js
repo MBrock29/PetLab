@@ -48,8 +48,6 @@ function App() {
 
   if (loading) return <Loading />;
 
-  console.log(pageCount);
-
   return (
     <div className={s.App}>
       <Sidebar>
